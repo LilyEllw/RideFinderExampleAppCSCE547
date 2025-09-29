@@ -1,3 +1,5 @@
+# RideFinderExampleAppCSCE547
+Example front end application for the CSCE 547 2025 class
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
