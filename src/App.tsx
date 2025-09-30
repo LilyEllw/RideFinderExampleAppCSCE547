@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './organisms/Home/home';
 import ParkDetails from './organisms/ParkDetails/parkDetails';
+import Cart from './organisms/Cart/cart'
 import ParkService from './services/parkService';
 import CartService from './services/cartService';
 
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home parkService={parkService}/>} />
           <Route path="details/:parkId" element={<ParkDetails parkService={parkService} cartService={cartService}/>} />
+		  <Route path="/cart" element={<Cart cartService={cartService} /> } />
         </Routes>
         
       </div>

@@ -38,3 +38,8 @@
     text-align: center;
     margin: 1em;
 }
+
+.button-add-to-cart:disabled {
+	background-color: lightgray;
+	cursor: auto;
+}

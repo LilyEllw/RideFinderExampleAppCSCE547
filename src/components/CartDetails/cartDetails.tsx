@@ -1,13 +1,18 @@
-import cartService from "../../services/cartService";
+import CartService from "../../services/cartService";
+import CartCard from "../cartCard/cartCard";
+import { CartItem } from '../../models/cartItem';
 
-export default function cartDetails() {
-    //We can instantiate this again since it pulls from local, not ideal but it will work
-    const service = new cartService();
+type CartDetailsProps = {
+	cartService: CartService
+}
 
+export default function cartDetails(props: CartDetailsProps) {
+	const { cartService } = props;
     //Pulling from local storage as source of truth
-    const cart = service.loadCart();
-
+    const cart = cartService.loadCart();
+	
+	
     return(
-        <div>:)</div>
+        <div>{cart.map(((item: CartItem) => <CartCard cartItem={item} />))}</div>
     )
 }

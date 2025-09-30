@@ -16,25 +16,25 @@ export default class CartService {
     }
 
     addItemToCart = (newItem: CartItem) => {
-        const cart = this.getCart();
+        const cart = this.getCart() || [];
         const itemInCart = cart.findIndex((item) => item.park.id === newItem.park.id);
         if(itemInCart > -1) {
             this.updateCart(cart[itemInCart], newItem);
         }
         cart.push(newItem);
-        this.save();
+        this.save(cart);
     }
 
     removeItemFromCart = (remItem: CartItem) => {
         const cart = this.getCart();
         cart.filter((val) => !(val.park.id === remItem.park.id || val.numDays === remItem.numDays))
-        this.save();
+        this.save(cart);
     }
 
     updateCart(oldItem: CartItem, newItem: CartItem) {
         const cart = this.getCart()
         if(oldItem.park.id !== newItem.park.id) {
-            this.save();
+            this.save(cart);
         }
 
         //Update with new item first and then old item if it doesn't exist
@@ -48,10 +48,10 @@ export default class CartService {
         if(index > -1) {
             cart[index] = combinedItem;
         }
-        this.save();
+        this.save(cart);
     }
 
-    private save() {
-        localStorage.setItem(this.CART_KEY, JSON.stringify(this.getCart()));
+    private save(cart: CartItem[]) {
+        localStorage.setItem(this.CART_KEY, JSON.stringify(cart));
     }
 }
