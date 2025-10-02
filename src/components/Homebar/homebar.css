@@ -13,8 +13,7 @@
     position: absolute;
     font-size: .75em;
     border-radius: 100%;
-    width: .75vw;
-    height: 2.75vh;
+    width: 25%;
     right: 1em;
     top: -.25em;
 }
