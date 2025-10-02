@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { ParkCard } from '../parkCard/parkCard';
-import parkService from '../../services/parkService';
 import IPark from '../../models/park';
 import './featuredParks.css';
 import ParkService from '../../services/parkService';
@@ -18,7 +17,7 @@ export default function FeaturedParks(props: FeaturedParksProps) {
         parkService.getAllParks().then((res) => {
             setAllParks(res);
         })
-    }, []) 
+    }, [parkService]) 
 
     return(
         <>

@@ -3,16 +3,17 @@ import ReviewCard from "../ReviewCard/reviewCard";
 import BookRide from "../BookRide/bookRide";
 import './detailsPage.css';
 import ParkService from "../../services/parkService";
-import cartService from "../../services/cartService";
+import CartService from "../../services/cartService";
 
 interface detailsPageProps {
     park: IPark
     parkService: ParkService
-    cartService: cartService
+    cartService: CartService
+    onBook: () => void
 }
 
 export default function DetailsPage(props: detailsPageProps) {
-    const { park, parkService, cartService } = props;
+    const { park, cartService, onBook } = props;
  
     const getStarRating = () => {
         const fullStar = <svg className="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
@@ -66,7 +67,7 @@ export default function DetailsPage(props: detailsPageProps) {
                         {park.reviews?.map((review) => <ReviewCard review={review} />)}
                     </div>
                 <div className="column details-right-column">
-                    <BookRide park={park} cartService={cartService} />
+                    <BookRide park={park} cartService={cartService} onBook={onBook} />
                 </div>
             </div>
         </div>)

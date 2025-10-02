@@ -1,23 +1,16 @@
 import CartDetails from "../../components/CartDetails/cartDetails";
-import Footer from "../../components/Footer/footer";
-import Homebar from "../../components/Homebar/homebar";
 import CartService from "../../services/cartService";
 
 type CartProps = {
 	cartService: CartService
+    handleChange: () => void
 };
 
 export default function Cart(props: CartProps) {
-    const { cartService } = props;
+    const { cartService, handleChange } = props;
 	return (
         <div>
-            <div className="header content">
-                <Homebar />
-            </div>
-            <CartDetails cartService={cartService} />
-            <div className="footer content">
-                <Footer />
-            </div>
+            <CartDetails cartService={cartService} handleDelete={handleChange}/>
         </div>
     )
 }

@@ -2,15 +2,15 @@ import { useState } from "react";
 import IPark from "../../models/park";
 import './bookRide.css';
 import cartService from "../../services/cartService";
-import classNames from 'classnames';
 
 interface bookRideProps {
     park: IPark
     cartService: cartService
+    onBook: () => void
 }
 
 export default function BookRide(props: bookRideProps) {
-    const { park, cartService } = props;
+    const { park, cartService, onBook } = props;
 
     const [numAdults, setNumAdults] = useState(0);
     const [numKids, setNumKids] = useState(0)
@@ -18,7 +18,8 @@ export default function BookRide(props: bookRideProps) {
 	
 	const submitForm = () => {
 		cartService.addItemToCart({ park: park, numAdults: numAdults, numKids: numKids, numDays: numDays})
-	}
+        onBook();
+    }
 
 	//For the purposes of a realistic use case, a booking must have at least 1 adult.
 
@@ -45,6 +46,6 @@ export default function BookRide(props: bookRideProps) {
             </div>
             <hr />
             <div className="total-price"><b>Total: {getTotalPrice()}</b></div>
-			<button onClick={e => submitForm()} className="button-add-to-cart" disabled={numAdults == 0}>Add to Cart</button>
+			<button onClick={e => submitForm()} className="button-add-to-cart" disabled={numAdults === 0}>Add to Cart</button>
         </div>)
 }
