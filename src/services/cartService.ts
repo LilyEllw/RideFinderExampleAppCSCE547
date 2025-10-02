@@ -7,11 +7,8 @@ export default class CartService {
 
 
     //loadCart will be our public facing method, all invocations of getCart should be internal so we only have one source of truth
-    private getCart = () => {
-        return this.items;
-    }
 
-    loadCart = () => {
+    loadCart = (): CartItem[] => {
         return JSON.parse(localStorage.getItem(this.CART_KEY));
     }
 
