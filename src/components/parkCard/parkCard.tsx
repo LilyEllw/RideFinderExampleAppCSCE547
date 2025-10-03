@@ -45,7 +45,9 @@ export function ParkCard({park}: {park: IPark }) {
                 <div>
                     {park.description}
                 </div>
-                <button className="button-primary button-book" onClick={() => console.log(`Booking ${park.parkName}`)}>Book Now</button>
+                <a href={`/details/${park.id}`}>
+                    <button className="button-primary button-book">Book Now</button>
+                </a>
             </div>
         </div>
     )
