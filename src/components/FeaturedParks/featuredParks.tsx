@@ -1,24 +1,13 @@
-import { useState, useEffect } from 'react';
 import { ParkCard } from '../parkCard/parkCard';
-import parkService from '../../services/parkService';
 import IPark from '../../models/park';
 import './featuredParks.css';
-import ParkService from '../../services/parkService';
 
 interface FeaturedParksProps {
-    parkService: ParkService
+    allParks: IPark[]
 }
 
 export default function FeaturedParks(props: FeaturedParksProps) {
-    const [allParks, setAllParks] = useState([])
-
-    const { parkService } = props;
-
-    useEffect(() => {
-        parkService.getAllParks().then((res) => {
-            setAllParks(res);
-        })
-    }, []) 
+    const { allParks } = props;
 
     return(
         <>

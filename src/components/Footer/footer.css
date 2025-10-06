@@ -3,6 +3,7 @@
     min-height: calc(fit-content + 2em);
     padding: .5em;
     margin-top: 1em;
+    color: black;
     border-top: 1px solid gray;
     background-color: light gray;
 }
