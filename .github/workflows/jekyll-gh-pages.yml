@@ -28,15 +28,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          source: ./
-          destination: ./_site
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+          node-version: '22.x'
+      - name: Install Dependencies
+        run: npm install
+      - name: Build Webpage
+        run: npm run build
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v4.6.2
+        with:
+          name: artifact 
+          path: './dist'
+          if-no-files-found: error
 
   # Deployment job
   deploy:
