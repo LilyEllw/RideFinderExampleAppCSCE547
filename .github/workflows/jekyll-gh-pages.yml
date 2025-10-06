@@ -36,21 +36,15 @@ jobs:
         run: npm install
       - name: Build Webpage
         run: npm run build
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v4.6.2
-        with:
-          name: artifact 
-          path: './build'
-          if-no-files-found: error
 
   # Deployment job
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  deployment:
     runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+    steps: 
+      - name: Deploy
+        uses: bitovi/github-actions-react-to-github-pages@v1.2.4
+        with:
+          path: './build'
+          install_command: 'npm i'
+
+          
