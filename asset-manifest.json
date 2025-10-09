@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.a46f6ade.css",
-    "main.js": "/static/js/main.ee56d9eb.js",
-    "index.html": "/index.html",
-    "main.a46f6ade.css.map": "/static/css/main.a46f6ade.css.map",
-    "main.ee56d9eb.js.map": "/static/js/main.ee56d9eb.js.map"
+    "main.css": "/RideFinderExampleAppCSCE547/static/css/main.a46f6ade.css",
+    "main.js": "/RideFinderExampleAppCSCE547/static/js/main.2b0c933d.js",
+    "index.html": "/RideFinderExampleAppCSCE547/index.html",
+    "main.a46f6ade.css.map": "/RideFinderExampleAppCSCE547/static/css/main.a46f6ade.css.map",
+    "main.2b0c933d.js.map": "/RideFinderExampleAppCSCE547/static/js/main.2b0c933d.js.map"
   },
   "entrypoints": [
     "static/css/main.a46f6ade.css",
-    "static/js/main.ee56d9eb.js"
+    "static/js/main.2b0c933d.js"
   ]
 }
