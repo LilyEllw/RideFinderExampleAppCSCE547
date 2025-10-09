@@ -23,7 +23,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <div className="header content">
-          <Homebar numItems={cart?.length || 0} />
+          <Homebar numItems={cart ? cart.length : 0} />
         </div>
         <Routes>
           <Route path="/*" element={<Home parkService={parkService} cartService={cartService} />} />
