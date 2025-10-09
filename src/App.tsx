@@ -23,10 +23,10 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <div className="header content">
-          <Homebar numItems={cart.length} />
+          <Homebar numItems={cart.length || 0} />
         </div>
         <Routes>
-          <Route path="/" element={<Home parkService={parkService} cartService={cartService} />} />
+          <Route path="/*" element={<Home parkService={parkService} cartService={cartService} />} />
           <Route path="details/:parkId" element={<ParkDetails parkService={parkService} cartService={cartService} onBook={handleChange} />} />
 		      <Route path="/cart" element={<Cart cartService={cartService} handleChange={handleChange} /> } />
         </Routes>
