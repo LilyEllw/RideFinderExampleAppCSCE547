@@ -33,7 +33,7 @@ jobs:
         with:
           node-version: '22.x'
       - name: Install Dependencies
-        run: npm install
+        run: npm install && npm install -g serve
       - name: Build Webpage
         run: npm run build
 
@@ -41,10 +41,7 @@ jobs:
   deployment:
     runs-on: ubuntu-latest
     steps: 
-      - name: Deploy
-        uses: bitovi/github-actions-react-to-github-pages@v1.2.4
-        with:
-          path: './build'
-          install_command: 'npm i'
+      - name: Serve Webpage
+        run: serve -s build
 
           
