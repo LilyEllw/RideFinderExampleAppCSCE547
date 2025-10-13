@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Home from './organisms/Home/home';
 import ParkDetails from './organisms/ParkDetails/parkDetails';
 import Cart from './organisms/Cart/cart'
@@ -20,7 +20,6 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
       <div className="App">
         <div className="header content">
           <Homebar numItems={cart ? cart.length : 0} />
@@ -34,7 +33,6 @@ function App() {
           <Footer />
         </div>
       </div>
-    </BrowserRouter>
   );
 }
 
