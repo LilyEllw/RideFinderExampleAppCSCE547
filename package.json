@@ -36,7 +36,6 @@
       "react-app/jest"
     ]
   },
-  "homepage": "https://lilyellw.github.io/RideFinderExampleAppCSCE547/",
   "browserslist": {
     "production": [
       ">0.2%",
