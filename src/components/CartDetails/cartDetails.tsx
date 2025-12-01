@@ -38,8 +38,8 @@ export default function CartDetails(props: CartDetailsProps) {
             const {numAdults, numDays, numKids, park} = curr;
             return (
                 acc + 
-                    ((numAdults * numDays * park.adultPrice) + 
-                    (numKids * numDays * park.childPrice)) * 0.08 
+                    ((numAdults * 1 * park.adultPrice) + 
+                    (numKids * 1 * park.childPrice)) * 0.08 
         )
         }, 0)
     }
@@ -49,8 +49,8 @@ export default function CartDetails(props: CartDetailsProps) {
             const {numAdults, numDays, numKids, park} = curr;
             return (
                 acc + 
-                    ((numAdults * numDays * park.adultPrice) + 
-                    (numKids * numDays * park.childPrice)) * 1.08 
+                    ((numAdults * 1 * park.adultPrice) + 
+                    (numKids * 1 * park.childPrice)) * 1.08 
         )
         }, 0)
     }
