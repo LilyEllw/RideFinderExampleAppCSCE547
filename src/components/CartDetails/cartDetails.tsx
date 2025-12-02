@@ -35,7 +35,7 @@ export default function CartDetails(props: CartDetailsProps) {
 
     const getTaxPrice = () => {
         return cart.reduce((acc, curr) => {
-            const {numAdults, numDays, numKids, park} = curr;
+            const {numAdults, numKids, park} = curr;
             return (
                 acc + 
                     ((numAdults * 1 * park.adultPrice) + 
@@ -46,7 +46,7 @@ export default function CartDetails(props: CartDetailsProps) {
 
     const getTotalPrice = () => {
         return cart.reduce((acc, curr) => {
-            const {numAdults, numDays, numKids, park} = curr;
+            const {numAdults, numKids, park} = curr;
             return (
                 acc + 
                     ((numAdults * 1 * park.adultPrice) + 
