@@ -1,9 +1,14 @@
 .container {
     width: 100%;
-    min-height: 2em;
-    padding: .5em;
-    margin-top: 1em;
-    color: black;
-    border-top: 1px solid gray;
-    background-color: light gray;
+    min-height: 4rem;
+    padding: 1rem;
+    margin-top: 2rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--glass-border);
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

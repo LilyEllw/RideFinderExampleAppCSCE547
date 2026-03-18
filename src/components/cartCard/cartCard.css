@@ -1,70 +1,98 @@
 .card-body {
-    border: 1px solid black;
-    border-radius: 1em;
+    border: 1px solid var(--glass-border);
+    border-radius: 1rem;
     width: 55%;
-    box-shadow: 1px 1px 6px;
+    background: var(--surface-color);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: var(--shadow-sm);
     columns: 2;
     position: relative;
+    padding: 1.5rem;
+    margin: 1rem auto;
+    color: var(--text-main);
 }
 
 .card-image {
     width: 75%;
     margin: auto;
+    border-radius: 0.5rem;
 }
 
 .edit-button {
     border: none;
-    color: blue;
+    color: var(--primary-color);
     text-decoration: underline;
     cursor: pointer;
-    background-color: #F8F9FA;
+    background-color: transparent;
+    transition: var(--transition);
+}
+
+.edit-button:hover {
+    color: var(--primary-hover);
 }
 
 .card-title {
     text-align: left;
-    margin: .25em auto;
+    margin: 0.25rem auto;
+    font-weight: 800;
 }
 
 .card-subtitle {
     font-weight: 400;
-    margin: .25em auto;
+    margin: 0.25rem auto;
+    color: var(--text-muted);
 }
 
 .right-column {
     position: relative;
-    margin: 2em auto;
+    margin: 2rem auto;
 }
 
 .save-button {
-    background-color: #E9751A;
-    border-radius: 1em;
+    background: linear-gradient(135deg, var(--primary-color), #ff4b2b);
+    border-radius: 0.5rem;
     border: none;
-    height: 2.5em;
-    width: 5em;
+    height: 2.5rem;
+    width: 6rem;
     cursor: pointer;
+    color: white;
+    font-weight: 600;
+    transition: var(--transition);
 }
 
 .save-button:hover {
-    background-color: rgba(233, 117, 26, .8);
+    box-shadow: 0 4px 15px rgba(233, 117, 26, 0.4);
+    transform: translateY(-2px);
 }
 
 .delete-button {
     position: absolute;
-    bottom: .5em;
-    right: .5em;
+    bottom: 0.5rem;
+    right: 0.5rem;
     border: none;
-    background-color: #F8F9FA;
+    background-color: rgba(255, 65, 108, 0.1);
+    border-radius: 50%;
+    padding: 0.5rem;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
 }
 
 .delete-button .icon {
-    width: 100%;
-    height: 100%;
-    transition: background-color .2s ease;
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #ff4b2b;
 }
 
-.delete-button .icon:hover {
-    background-color: red;
+.delete-button:hover {
+    background-color: #ff4b2b;
+}
+
+.delete-button:hover .icon {
+    color: white;
 }
 
 .hidden {

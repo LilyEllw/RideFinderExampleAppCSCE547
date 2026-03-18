@@ -1,45 +1,66 @@
 .book-container {
-    background-color: white;
-    padding: 2em 2em;
-    border-radius: 1em;
-    box-shadow: 2px 0 4px 0;
+    background: var(--surface-color);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    padding: 2rem 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-sm);
     position: sticky;
     top: 6rem;
     width: clamp(80%, 75vw, 225px);
+    color: var(--text-main);
 }
 
 .input-field {
-    border: 1px solid lightgray;
-    border-radius: .25em;
-    margin: .5em auto .5em auto;
-    
+    border: 1px solid var(--glass-border);
+    background: rgba(0, 0, 0, 0.2);
+    color: var(--text-main);
+    border-radius: 0.5rem;
+    margin: 0.5rem auto;
+    padding: 0.5rem;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: var(--primary-color);
 }
 
 .price, .days {
     display: flex;
     width: 80%;
     flex-direction: column;
-    margin-bottom: .5em;
+    margin-bottom: 0.5rem;
     align-items: flex-start;
+    color: var(--text-muted);
 }
 
 .button-add-to-cart {
-    background-color: #E9751A;
+    background: linear-gradient(135deg, var(--primary-color), #ff4b2b);
     color: white;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: .75rem 1.5rem;
-    border-radius: .5rem;
+    padding: 0.85rem 1.5rem;
+    border-radius: 0.5rem;
     font-weight: 600;
+    font-size: 1rem;
     border: none;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: var(--transition);
     text-align: center;
-    margin: 1em;
+    margin: 1rem;
+    box-shadow: 0 4px 15px rgba(233, 117, 26, 0.4);
+}
+
+.button-add-to-cart:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(233, 117, 26, 0.6);
 }
 
 .button-add-to-cart:disabled {
-	background-color: lightgray;
-	cursor: auto;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-muted);
+    box-shadow: none;
+    cursor: not-allowed;
 }
